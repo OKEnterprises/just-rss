@@ -1,0 +1,28 @@
+{
+  "manifest_version": 2,
+  "name": "Just RSS",
+  "version": "1.0",
+  "description": "A minimal RSS reader with a forest green theme",
+
+  "permissions": [
+    "storage",
+    "<all_urls>"
+  ],
+
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "24": "icons/rss-feed-tag-solid.svg"
+    },
+    "default_title": "Just RSS"
+  },
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "icons": {
+    "48": "icons/rss-feed-tag-solid.svg"
+  }
+}
