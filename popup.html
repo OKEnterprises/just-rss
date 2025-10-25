@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Just RSS</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Main Feed View -->
+  <div id="feedView" class="view">
+    <div class="header">
+      <h1 class="title">Just RSS</h1>
+      <button id="menuBtn" class="icon-btn" title="Settings">
+        <img src="icons/menu.svg" alt="Menu" class="icon">
+      </button>
+    </div>
+
+    <div id="feedsContainer">
+      <div id="loading" class="loading">Loading feeds...</div>
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <p>No feeds yet!</p>
+        <p class="empty-hint">Click the menu to subscribe to your first feed.</p>
+      </div>
+      <div id="feedsList"></div>
+    </div>
+  </div>
+
+  <!-- Settings View -->
+  <div id="settingsView" class="view" style="display: none;">
+    <div class="header">
+      <button id="backBtn" class="icon-btn back-btn" title="Back to feeds">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <h1 class="title">Settings</h1>
+    </div>
+
+    <div class="settings-content">
+      <!-- Subscribe Section -->
+      <section class="settings-section">
+        <h2>Subscribe to Feed</h2>
+        <div class="input-group">
+          <input type="url" id="feedUrlInput" placeholder="Enter RSS feed URL" class="input">
+          <button id="subscribeBtn" class="btn btn-primary">Subscribe</button>
+        </div>
+        <div id="subscribeError" class="error-message" style="display: none;"></div>
+        <div id="subscribeSuccess" class="success-message" style="display: none;"></div>
+      </section>
+
+      <!-- Current Feeds Section -->
+      <section class="settings-section">
+        <h2>Subscribed Feeds</h2>
+        <div id="subscribedFeedsList" class="subscribed-list">
+          <div class="empty-hint">No feeds subscribed yet.</div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
